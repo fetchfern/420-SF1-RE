@@ -1,10 +1,20 @@
+
+def nombre_valide():
+    nbr_string = input('votre mot de passe: ')
+
+    try:
+        nbr_converti = int(nbr_string)
+    except ValueError as _:
+        print('nombre invalide')
+        return
+
+    if nbr_converti % 2 == 0 and '5' in nbr_string and (200 >= nbr_converti >= 100):
+        print('nombre OK')
+    else:
+        print('nombre invalide')
+
+
+
 if __name__ == '__main__':
-    n1 = int(input('nombre 1: '))
-    n2 = int(input('nombre 2: '))
-    n3 = int(input('nombre 3: '))
-
-    lowest = n1 if n1 < n2 else n2
-    lowest = lowest if lowest < n3 else n3
-
-    print(f'le plus bas: {lowest}')
-
+    while True:
+        nombre_valide()
